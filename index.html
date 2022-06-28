@@ -5,63 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script> 
-        const items = ['Rock', ' Paper', ' Scissors']
-                
-                
-        function computerPlay() {
-            const randomChoice = Math.floor(Math.random() * items.length);
-            return items[randomChoice];
-        };
-
+    <section id="page-wrapper">
+        <h1>Rock Paper Scissors</h1>
+        <p>Play a 5 round game</p>
+        <div class="round">
+            <h3>Round:</h3>
+            <p>1</p>
+        </div>
+        <div id="game-wrapper">
+            <div class="player-container">
+                <div class="user-container">
+                    <h2>Human</h2>
+                    <div  class="score">
+                        <h3>Score:</h3>
+                        <p class="human-score">0</p>
+                    </div>
+                </div>
+                <div class="user-buttons">
+                    <button class="rock">Rock</button>
+                    <button class="paper">Paper</button>
+                    <button class="scissors">Scissors</button>
+                </div>
+            </div>
+            <div class="player-container">
+                <div class="user-container">
+                    <h2>Computer</h2>
+                    <div  class="score">
+                        <h3>Score:</h3>
+                        <p class="computer-score">0</p>
+                    </div>
+                </div>
+                <div class="user-buttons">
+                    <button class="rock">Rock</button>
+                    <button class="paper">Paper</button>
+                    <button class="scissors">Scissors</button>
+                </div>
+            </div>   
+        </div>
+        <pre class="result">
+            <h2>Result</h2>
+        </pre>
         
-        function playRound(playerSelection, computerSelection) {
-            let player = playerSelection;
-            let computer = computerSelection;
-            if (player == 'rock' && computer == 'Scissors') {
-                playerScore++;
-                return 'Win';
-            } else if (player == 'rock' && computer == 'Paper') {
-                computerScore++;
-                return 'Lose';
-            } else if (player == 'paper' && computer == 'Scissors') {
-                computerScore++;
-                return 'Lose';
-            } else if (player == 'paper' && computer == 'Rock') {
-                playerScore++;
-                return 'Win';
-            } else if (player == 'scissors' && computer == 'Rock') {
-                computerScore++;
-                return 'Lose';
-            } else if (player == 'scissors' && computer == 'Paper') {
-                playerScore++;
-                return 'Win';
-            }
-            else return 'Draw';
-        } 
 
-        let computerScore = 0;
-        let playerScore = 0;
-            
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt(`Choose one of these: ${items}`);
-                playerSelection = playerSelection.toLowerCase();
-                const computerSelection = computerPlay();
-                console.log(playRound(playerSelection, computerSelection));
-            }
-            if (playerScore > computerScore) {
-                console.log(`You win! Final Score: ${playerScore} to ${computerScore}`);
-            } else if (computerScore > playerScore) {
-                console.log(`You suck! Final Score: ${playerScore} to ${computerScore}`);
-            } else
-                console.log(`You tied. Final Score: ${playerScore} to ${computerScore}`);
-        }
-
-        game();
-    </script>
+    </section>
 </body>
 </html>
