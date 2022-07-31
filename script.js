@@ -90,7 +90,7 @@ function playRound(playerSelection) {
 	) {
 		playerScore++;
 		userScore.textContent = `${playerScore}`;
-		result.textContent = `You won #${roundCount} round.`;
+		result.textContent = `You won round #${roundCount}`;
 
 		if (playerScore == 5) {
 			result.textContent = `You WON! You got 5 points in ${roundCount} rounds!`;
@@ -107,7 +107,7 @@ function playRound(playerSelection) {
 	} else {
 		computerScore++;
 		compScore.textContent = `${computerScore}`;
-		result.textContent = `You lost #${roundCount} round.`;
+		result.textContent = `You lost round #${roundCount}`;
 
 		if (computerScore == 5) {
 			result.textContent = `You suck! You lost to a Computer in ${roundCount} rounds! Go and do something useful!`;
