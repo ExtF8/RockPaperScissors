@@ -32,7 +32,6 @@ button {
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
 }
 
 #game-wrapper {
@@ -77,9 +76,16 @@ button {
 }
 
 .round {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
     font-size: 1.7em;
     justify-content: center;   
     align-items: center;
+}
+
+.round p {
+    font-size: larger;
 }
 
 .user-buttons {
@@ -91,4 +97,34 @@ button {
 .user-container h2 {
     font-size: 2em;
     border-bottom: 2px dotted darkviolet;
+}
+
+.result {
+    margin: 16px;
+    word-wrap: break-word;
+    color: aqua;
+}
+
+.refresh {
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 16px 16px;
+    font-size: larger;
+}
+
+.userHover {
+    box-shadow: 0px 2px 6px 2px #FFFF00;
+    cursor: pointer;
+}
+
+.userClick {
+    box-shadow: 0px 2px 6px 2px #FFFF00;
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
+}
+
+.computerPick {
+    box-shadow: 0px 2px 6px 2px #FFFF00;
+    transition: all 1s ease-in-out;
+    transform: scale(1.1);
 }
