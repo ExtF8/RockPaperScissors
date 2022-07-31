@@ -19,24 +19,6 @@ const computerRock = document.querySelector('.computer-rock');
 const computerPaper = document.querySelector('.computer-paper');
 const computerScissors = document.querySelector('.computer-scissors');
 
-rockButton.addEventListener('mouseover', userHover);
-paperButton.addEventListener('mouseover', userHover);
-scissorsButton.addEventListener('mouseover', userHover);
-
-
-rockButton.addEventListener('mouseleave', removeHover);
-paperButton.addEventListener('mouseleave', removeHover);
-scissorsButton.addEventListener('mouseleave', removeHover);
-
-const newGame = document.createElement('button');
-
-newGame.textContent = 'Play again!';
-newGame.classList.add('button', 'refresh');
-
-newGame.addEventListener('mouseover', refreshHover);
-newGame.addEventListener('mouseleave', removeHover);
-newGame.addEventListener('click', refreshHover);
-
 function refreshHover() {
 	newGame.classList.add('userHover');
 }
@@ -73,7 +55,6 @@ function disableButtons() {
     })
 }
 
-newGame.addEventListener('click', refreshPage);
 
 [...btns].forEach(btn => {
 	let choice = btn.getAttribute('data-selection');
@@ -169,3 +150,20 @@ computerScissors.addEventListener('transitionend', removeColor);
 rockButton.addEventListener('transitionend', removeClick);
 paperButton.addEventListener('transitionend', removeClick);
 scissorsButton.addEventListener('transitionend', removeClick);
+
+rockButton.addEventListener('mouseover', userHover);
+paperButton.addEventListener('mouseover', userHover);
+scissorsButton.addEventListener('mouseover', userHover);
+
+rockButton.addEventListener('mouseleave', removeHover);
+paperButton.addEventListener('mouseleave', removeHover);
+scissorsButton.addEventListener('mouseleave', removeHover);
+
+const newGame = document.createElement('button');
+newGame.textContent = 'Play again!';
+newGame.classList.add('button', 'refresh');
+
+newGame.addEventListener('mouseover', refreshHover);
+newGame.addEventListener('mouseleave', removeHover);
+newGame.addEventListener('click', refreshHover);
+newGame.addEventListener('click', refreshPage);
