@@ -42,7 +42,6 @@ function userHover() {
 	}
 }
 
-
 function removeUserColor() {
 	rockButton.classList.remove('userClick');
     paperButton.classList.remove('userClick');
@@ -55,7 +54,6 @@ function disableButtons() {
     })
 }
 
-
 [...btns].forEach(btn => {
 	let choice = btn.getAttribute('data-selection');
 	btn.addEventListener('click', () => {
@@ -63,7 +61,6 @@ function disableButtons() {
 		btn.classList.add('userClick');
 	})
 })
-
 
 function computerPlay() {
 	let result = 'scissors';
@@ -93,7 +90,7 @@ function playRound(playerSelection) {
 	) {
 		playerScore++;
 		userScore.textContent = `${playerScore}`;
-		result.textContent = `You won round #${roundCount}`;
+		result.textContent = `You won #${roundCount} round.`;
 
 		if (playerScore == 5) {
 			result.textContent = `You WON! You got 5 points in ${roundCount} rounds!`;
@@ -110,10 +107,10 @@ function playRound(playerSelection) {
 	} else {
 		computerScore++;
 		compScore.textContent = `${computerScore}`;
-		result.textContent = `You lost round #${roundCount}`;
+		result.textContent = `You lost #${roundCount} round.`;
 
 		if (computerScore == 5) {
-			result.textContent = `You suck! You lost to Computer in ${roundCount} rounds! Go and do something useful!`;
+			result.textContent = `You suck! You lost to a Computer in ${roundCount} rounds! Go and do something useful!`;
 			resultContent.insertAdjacentElement('afterend', newGame);
 			disableButtons();
 		}
