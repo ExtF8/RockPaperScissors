@@ -1,4 +1,4 @@
-// this is a variable and is good for stuff
+// this is a variable and it is good for stuff
 let computerScore = 0;
 let playerScore = 0;
 let roundCount = 1;
